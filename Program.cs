@@ -1,4 +1,6 @@
-﻿internal class Program
+﻿using System.ComponentModel.DataAnnotations;
+
+internal class Program
 {
     private static void Main(string[] args)
     {
@@ -37,6 +39,7 @@
             max = u;
         Console.WriteLine($"Max là {max}");
         */
+        /*
         Console.WriteLine("Nhập các hệ số a, b, c: ");
         double a = double.Parse(Console.ReadLine());
         double b = double.Parse(Console.ReadLine());
@@ -72,6 +75,34 @@
             else
                 Console.Write("PTVN");
         }
+        */
+        Console.WriteLine("Nhập 3 số a, b, c: ");
+        int a = int.Parse(Console.ReadLine());
+        int b = int.Parse(Console.ReadLine());
+        int c = int.Parse(Console.ReadLine());
+        int max = a;
+        if (max > b)
+            max = b;
+        if (max > c)
+            max = c;
+        if (a + b > c && a + c > b && b + c > a)
+        {
+            if (a == b && b == c)
+                Console.WriteLine("tam giac deu");
+            else if (a == b || b == c || a == c)
+            {
+                if (a * a + b * b + c * c == 2 * max * max)
+                    Console.WriteLine("Đây là tam giác vuông cân");
+                else
+                    Console.WriteLine("Tam giác cân");
 
+            }
+            else if (a * a + b * b + c * c == 2 * max * max)
+                Console.WriteLine("Tam giác vuông");
+            else
+                Console.WriteLine("Tam giác thường");
+        }
+        else
+            Console.WriteLine("Đây không là tam giác");
     }
 }
